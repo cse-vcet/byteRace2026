@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Byte Race 2026 — Oct 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
+  button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  img, svg { max-width: 100%; height: auto; }
+
+  /* ============ TOKENS — Neo-Brutalism ============ */
+  :root {
+    --font-display: 'Space Grotesk', 'Arial Black', sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+
+    --bg: #F2F0E9;
+    --surface: #FFFFFF;
+    --text: #16140F;
+    --text-dim: #55524A;
+    --accent: #FF5C39;
+    --accent-2: #2B2FEB;
+    --accent-3: #FFD23F;
+    --border: #16140F;
+    --radius: 0px;
+    --shadow: 8px 8px 0 var(--border);
+    --hair: 2px solid var(--border);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100%;
+    transition: background .35s ease, color .35s ease;
+  }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+  /* ============ TOP BAR ============ */
+  header.top {
+    position: sticky; top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: var(--hair);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; max-width: 980px; margin: 0 auto; gap: 12px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; flex-shrink: 0; }
+  .brand .mark {
+    font-family: var(--font-display); font-weight: 700; font-size: clamp(0.85rem, 3vw, 1.05rem);
+    letter-spacing: -0.01em; white-space: nowrap;
+  }
+  .brand .sub { font-size: .78rem; color: var(--text-dim); white-space: nowrap; }
+
+  @media (max-width: 420px) {
+    .brand .sub { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero { padding: clamp(32px, 8vw, 64px) 0 clamp(24px, 5vw, 40px); }
+  .eyebrow-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .pill {
+    font-size: .74rem; font-weight: 600; padding: 6px 12px;
+    border: var(--hair); border-radius: var(--radius); background: var(--surface);
+    white-space: nowrap;
+  }
+  h1.hero-title {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2rem, 8vw, 4.6rem);
+    line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 16px;
+    overflow-wrap: break-word;
+  }
+  .hero-title .line2 { color: var(--accent); }
+  p.hero-desc {
+    font-size: clamp(0.92rem, 2.2vw, 1.05rem); color: var(--text-dim); max-width: 56ch; line-height: 1.55;
+    margin: 0 0 clamp(24px, 5vw, 36px);
+  }
+
+  /* ============ COUNTDOWN ============ */
+  .countdown {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: clamp(6px, 2vw, 12px); margin-bottom: 8px;
+  }
+  .cd-box {
+    background: var(--surface); border: var(--hair); border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(10px, 3vw, 18px) 4px clamp(8px, 2vw, 14px);
+    text-align: center; min-width: 0;
+  }
+  .cd-num {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.25rem, 6vw, 2.6rem); line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .cd-label {
+    font-size: clamp(0.55rem, 1.8vw, 0.68rem); font-weight: 600; color: var(--text-dim);
+    margin-top: 6px; letter-spacing: 0.03em;
+  }
+  .cd-target { font-size: .82rem; color: var(--text-dim); margin-top: 14px; }
+  .cd-target strong { color: var(--text); }
+
+  /* ============ SECTION HEADS ============ */
+  section { padding: clamp(36px, 7vw, 56px) 0; border-top: var(--hair); }
+  .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: clamp(22px, 5vw, 34px); flex-wrap: wrap; }
+  h2.sec-title {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.4rem, 5vw, 2.2rem); letter-spacing: -0.01em; margin: 0;
+  }
+  .sec-note { font-size: .85rem; color: var(--text-dim); max-width: 40ch; }
+
+  /* ============ TIMELINE ============ */
+  .timeline { display: flex; flex-direction: column; }
+  .t-row {
+    display: grid; grid-template-columns: minmax(84px, 132px) 28px 1fr;
+    align-items: start; column-gap: 4px;
+  }
+  .t-date {
+    font-family: var(--font-display); font-weight: 700; font-size: clamp(0.78rem, 2.2vw, 0.92rem);
+    padding: 18px 0; color: var(--accent-2); min-width: 0; overflow-wrap: break-word;
+  }
+  .t-rail { display: flex; flex-direction: column; align-items: center; height: 100%; }
+  .t-dot {
+    width: 14px; height: 14px; border: var(--hair); background: var(--accent);
+    border-radius: 50%; margin-top: 22px; flex-shrink: 0;
+  }
+  .t-line { width: 2px; flex: 1; background: var(--border); opacity: .35; }
+  .t-row:last-child .t-line { display: none; }
+  .t-body { padding: 14px 0 30px; min-width: 0; }
+  .t-body h3 {
+    font-family: var(--font-body); font-weight: 700; font-size: clamp(0.92rem, 2.6vw, 1.02rem); margin: 0 0 6px;
+    overflow-wrap: break-word;
+  }
+  .t-body p { margin: 0; color: var(--text-dim); font-size: clamp(0.85rem, 2.2vw, 0.92rem); line-height: 1.5; overflow-wrap: break-word; }
+  .t-tag {
+    display: inline-block; font-size: .66rem; font-weight: 700; letter-spacing: .03em;
+    padding: 3px 9px; border-radius: var(--radius); margin-bottom: 8px;
+    background: var(--accent-3); color: #16140F; border: var(--hair);
+  }
+
+  @media (max-width: 400px) {
+    .t-row { grid-template-columns: 20px 1fr; column-gap: 10px; }
+    .t-date { grid-column: 2; grid-row: 1; padding: 16px 0 0; }
+    .t-rail { grid-column: 1; grid-row: 1 / span 2; }
+    .t-body { grid-column: 2; grid-row: 2; padding: 2px 0 26px; }
+  }
+
+  /* ============ PRIZE POOL ============ */
+  .prize-card {
+    background: var(--surface); border: var(--hair); border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(24px, 5vw, 40px) clamp(18px, 4vw, 32px);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: clamp(16px, 3vw, 24px); flex-wrap: wrap;
+  }
+  .prize-amt-wrap { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .prize-label { font-size: .8rem; font-weight: 600; color: var(--text-dim); }
+  .prize-amt {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.6rem, 7vw, 3.2rem); letter-spacing: -0.01em;
+    overflow-wrap: break-word;
+  }
+  .prize-edit-hint {
+    font-size: .74rem; color: var(--text-dim); border: 1px dashed var(--text-dim);
+    padding: 4px 10px; border-radius: var(--radius); white-space: nowrap;
+  }
+  .prize-split { display: flex; gap: clamp(12px, 3vw, 22px); flex-wrap: wrap; }
+  .prize-split div { text-align: center; display: flex; flex-direction: column; justify-content: flex-end; }
+  .prize-split .k { font-family: var(--font-display); font-weight: 700; font-size: clamp(1rem, 3vw, 1.2rem); }
+  .prize-split .l { font-size: .66rem; color: var(--text-dim); margin-top: 2px; }
+
+  footer.foot {
+    padding: 30px 0 calc(30px + env(safe-area-inset-bottom, 0px));
+    border-top: var(--hair);
+    font-size: .8rem; color: var(--text-dim);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 640px) {
+    .t-row { grid-template-columns: 84px 22px 1fr; }
+    .prize-card { padding: 24px 18px; }
+    .prize-split { gap: 14px; }
+    .prize-edit-hint { display: none; }
+  }
+
+  @media (max-width: 340px) {
+    .cd-num { font-size: 1.1rem; }
+    .cd-label { letter-spacing: 0.01em; }
+  }
+
+  /* =========================================================
+     NEO-BRUTALISM — refinements
+  ==========================================================*/
+  :root[data-theme="neo"] {
+    --bg: #F2F0E9;
+    --surface: #FFFFFF;
+    --text: #16140F;
+    --text-dim: #55524A;
+    --accent: #FF5C39;
+    --accent-2: #2B2FEB;
+    --accent-3: #FFD23F;
+    --border: #16140F;
+    --radius: 0px;
+    --shadow: 8px 8px 0 var(--border);
+    --hair: 3px solid var(--border);
+    --btn-on-accent: #16140F;
+  }
+  :root[data-theme="neo"] .cd-box:hover { transform: translate(-3px,-3px); box-shadow: 11px 11px 0 var(--border); }
+  :root[data-theme="neo"] .cd-box { transition: transform .15s ease, box-shadow .15s ease; }
+  :root[data-theme="neo"] .hero-title .line2 { -webkit-text-stroke: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+
+  /* Extra small phones (iPhone SE / older Android, ~320px) */
+  @media (max-width: 360px) {
+    .wrap { padding: 0 16px; }
+    .topbar-inner { padding: 12px 16px; }
+    h1.hero-title { font-size: clamp(1.7rem, 9vw, 2.4rem); }
+  }
+
+  /* Large desktop / wide monitors: cap line lengths, don't let things stretch too thin */
+  @media (min-width: 1440px) {
+    .wrap { max-width: 1080px; }
+  }
+</style>
+</head>
+<body data-theme="neo">
+
+<header class="top">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="mark">BYTE RACE 2026</span>
+      <span class="sub">14 Oct</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO + COUNTDOWN -->
+  <section class="hero" style="border-top:none; padding-top:56px;">
+    <div class="eyebrow-row">
+      <span class="pill">All branches · All years</span>
+      <span class="pill">Round 1 + Round 2</span>
+    </div>
+    <h1 class="hero-title">Build something<br><span class="line2">in 6 hours flat.</span></h1>
+    <p class="hero-desc">Two rounds, one weekday. Clear a 50-mark quiz and a 48-hour project round, then go head-to-head in a 6-hour live build across 5–6 open domains.</p>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">DAYS</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">HOURS</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">MINUTES</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">SECONDS</div></div>
+    </div>
+    <div class="cd-target" id="cd-target">until <strong>Hackathon Day — 14 October</strong></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="sec-head">
+      <h2 class="sec-title">Timeline</h2>
+      <p class="sec-note">Dates are tentative — shift them to match your college's final calendar.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-row">
+        <div class="t-date">Oct 1–4</div>
+        <div class="t-rail"><div class="t-dot"></div><div class="t-line"></div></div>
+        <div class="t-body">
+          <span class="t-tag">ROUND 1 · PART A</span>
+          <h3>Registration &amp; project submission</h3>
+          <p>Teams register and submit their 48-hour project as a GitHub link, with a live demo if applicable. Any AI tool is fair game.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">Oct 5–7</div>
+        <div class="t-rail"><div class="t-dot"></div><div class="t-line"></div></div>
+        <div class="t-body">
+          <span class="t-tag">ROUND 1 · PART B</span>
+          <h3>50-mark quiz</h3>
+          <p>Held offline in a lab or AV hall on a platform like Kahoot. Quiz and project scores are averaged, with 3 teams selected from each of 1st, 2nd and 3rd year — 10 teams total.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">Oct 12</div>
+        <div class="t-rail"><div class="t-dot"></div><div class="t-line"></div></div>
+        <div class="t-body">
+          <span class="t-tag">RESULTS</span>
+          <h3>Round 1 results announced</h3>
+          <p>The 10 shortlisted teams are revealed a day after the quiz wraps.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">Oct 14</div>
+        <div class="t-rail"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <span class="t-tag">ROUND 2</span>
+          <h3>Hackathon day — 6-hour build</h3>
+          <p>Shortlisted teams build live against a set of 5–6 domains. Winners are judged on performance across both rounds, not just the final demo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIZE POOL -->
+  <section id="prizes">
+    <div class="sec-head">
+      <h2 class="sec-title">Prize pool</h2>
+      <p class="sec-note">Cash prizes plus goodies for the top teams.</p>
+    </div>
+
+    <div class="prize-card">
+      <div class="prize-amt-wrap">
+        <span class="prize-label">Total prize pool</span>
+        <span class="prize-amt" id="prize-total">₹ 8,000</span>
+        <span class="prize-label">+ Goodies</span>
+      </div>
+      <div class="prize-split">
+        <div><div class="k">₹5,000</div><div class="l">First Place</div></div>
+        <div><div class="k">₹3,000</div><div class="l">Second Place</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Byte Race 2026 · Round 1 + Round 2</span>
+    <span>Hackathon day: 14 October</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  // ---- Countdown ----
+  // Target: Hackathon Day, 14 October (this year), 09:00 local time.
+  function getTarget() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var target = new Date(year, 9, 14, 9, 0, 0, 0); // month is 0-indexed: 9 = October
+    if (target.getTime() < now.getTime()) {
+      target = new Date(year + 1, 9, 14, 9, 0, 0, 0);
+    }
+    return target;
+  }
+  var target = getTarget();
+  var elDays = document.getElementById('cd-days');
+  var elHours = document.getElementById('cd-hours');
+  var elMins = document.getElementById('cd-mins');
+  var elSecs = document.getElementById('cd-secs');
+  var elTarget = document.getElementById('cd-target');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    var now = new Date();
+    var diff = target.getTime() - now.getTime();
+    if (diff <= 0) {
+      elDays.textContent = '00'; elHours.textContent = '00';
+      elMins.textContent = '00'; elSecs.textContent = '00';
+      elTarget.innerHTML = '<strong>The hackathon has begun!</strong>';
+      return;
+    }
+    var totalSecs = Math.floor(diff / 1000);
+    var days = Math.floor(totalSecs / 86400);
+    var hours = Math.floor((totalSecs % 86400) / 3600);
+    var mins = Math.floor((totalSecs % 3600) / 60);
+    var secs = totalSecs % 60;
+    elDays.textContent = pad(days);
+    elHours.textContent = pad(hours);
+    elMins.textContent = pad(mins);
+    elSecs.textContent = pad(secs);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
