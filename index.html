@@ -148,6 +148,14 @@
     .hero-logo { height: calc(var(--hero-fs) * 2.6); }
   }
 
+
+  /* ============ REGISTRATION MARQUEE ============ */
+  .registration-marquee { width: 100%; overflow: hidden; background: var(--accent-3); border-top: var(--hair); border-bottom: var(--hair); margin-bottom: 24px; white-space: nowrap; }
+  .registration-marquee-track { display: inline-flex; width: max-content; animation: registration-marquee-scroll 14s linear infinite; }
+  .registration-marquee span { display: inline-block; padding: 10px 32px; font-family: var(--font-display); font-weight: 700; font-size: clamp(.85rem, 2.5vw, 1rem); text-transform: uppercase; letter-spacing: .04em; }
+  @keyframes registration-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .registration-marquee-track { animation: none; } }
+
   /* ============ HERO ============ */
   .hero { padding: clamp(32px, 8vw, 64px) 0 clamp(24px, 5vw, 40px); }
   .eyebrow-row {
@@ -382,6 +390,13 @@
 
   <!-- HERO + COUNTDOWN -->
   <section class="hero" style="border-top:none; padding-top:56px;">
+  <div class="registration-marquee" role="status" aria-label="Registration announcement">
+    <div class="registration-marquee-track">
+      <span>Registration link coming soon • Registration link coming soon • Registration link coming soon • </span>
+      <span aria-hidden="true">Registration link coming soon • Registration link coming soon • Registration link coming soon • </span>
+    </div>
+  </div>
+
     <div class="eyebrow-row">
       <span class="pill">All branches · All years</span>
       <span class="pill">Round 1 + Round 2</span>
@@ -416,7 +431,7 @@
         <div class="t-date">Oct 1–4</div>
         <div class="t-rail"><div class="t-dot"></div><div class="t-line"></div></div>
         <div class="t-body">
-          <span class="t-tag">ROUND 1 · PART A</span>
+          <span class="t-tag">ROUND 1 · Idea-Presention</span>
           <h3>Registration &amp; project submission</h3>
           <p>Teams register and submit their 48-hour project as a GitHub link, with a live demo if applicable. Any AI tool is fair game.</p>
         </div>
@@ -426,7 +441,7 @@
         <div class="t-date">Oct 6</div>
         <div class="t-rail"><div class="t-dot"></div><div class="t-line"></div></div>
         <div class="t-body">
-          <span class="t-tag">ROUND 1 · PART B</span>
+          <span class="t-tag">ROUND 2 · Knowledge grid</span>
           <h3>50-mark quiz</h3>
           <p>Held on Campus (The venue will be announced later). Quiz and project scores are averaged, with 3 teams selected from each of 1st, 2nd and 3rd year — 10 teams total.</p>
         </div>
