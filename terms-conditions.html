@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms, Privacy &amp; Copyright — Byte Race 2026</title>
+<meta name="description" content="Terms &amp; Conditions and Privacy Policy for Byte Race 2026, the hackathon organised by the Department of Computer Science &amp; Engineering, VCET Puttur.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#F2F0E9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-tap-highlight-color: transparent; }
+  a { -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --font-display: 'Space Grotesk', 'Arial Black', sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --bg: #F2F0E9;
+    --surface: #FFFFFF;
+    --text: #16140F;
+    --text-dim: #55524A;
+    --accent: #FF5C39;
+    --accent-2: #2B2FEB;
+    --accent-3: #FFD23F;
+    --border: #16140F;
+    --shadow: 6px 6px 0 var(--border);
+    --hair: 3px solid var(--border);
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { border-bottom: var(--hair); background: var(--bg); }
+  .topbar-inner {
+    max-width: 820px; margin: 0 auto; padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .back-link {
+    font-weight: 700; font-size: .85rem; color: var(--text); text-decoration: none;
+    border: var(--hair); padding: 8px 14px; background: var(--surface);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .back-link:hover { background: var(--accent-3); }
+  .brand-mini { font-family: var(--font-display); font-weight: 700; font-size: .95rem; }
+
+  main { padding: 40px 0 80px; }
+  .page-title {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.8rem, 6vw, 2.6rem); letter-spacing: -0.01em; margin: 0 0 8px;
+  }
+  .page-sub { color: var(--text-dim); font-size: .92rem; margin: 0 0 32px; }
+
+  .notice {
+    background: var(--accent-3); border: var(--hair); box-shadow: var(--shadow);
+    padding: 16px 18px; font-size: .88rem; line-height: 1.55; margin-bottom: 36px; color: #16140F;
+  }
+  .notice strong { display: block; margin-bottom: 4px; }
+
+  nav.toc {
+    background: var(--surface); border: var(--hair); box-shadow: var(--shadow);
+    padding: 16px 18px; margin-bottom: 40px;
+  }
+  nav.toc p { margin: 0 0 10px; font-weight: 700; font-size: .85rem; }
+  nav.toc ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: .88rem; }
+  nav.toc a { color: var(--accent-2); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.legal-sec { padding: 30px 0; border-top: var(--hair); }
+  section.legal-sec:first-of-type { border-top: none; }
+  h2.sec-h {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.15rem, 3vw, 1.5rem); letter-spacing: -0.01em; margin: 0 0 14px;
+    scroll-margin-top: 90px;
+  }
+  h3.sub-h { font-family: var(--font-body); font-weight: 700; font-size: 1rem; margin: 20px 0 8px; }
+  .legal-sec p { line-height: 1.65; font-size: .94rem; color: var(--text-dim); margin: 0 0 14px; }
+  .legal-sec ul, .legal-sec ol.plain { line-height: 1.65; font-size: .94rem; color: var(--text-dim); margin: 0 0 14px; padding-left: 20px; display: grid; gap: 8px; }
+  .legal-sec strong { color: var(--text); }
+  .legal-sec a { color: var(--accent-2); }
+
+  address.contact-block {
+    font-style: normal; background: var(--surface); border: var(--hair); box-shadow: var(--shadow);
+    padding: 18px; font-size: .9rem; line-height: 1.6; margin: 16px 0;
+  }
+  address.contact-block strong { display: block; margin-bottom: 4px; }
+
+  footer.foot {
+    padding: 30px 0 calc(30px + env(safe-area-inset-bottom, 0px));
+    border-top: var(--hair);
+    font-size: .8rem; color: var(--text-dim);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 560px) {
+    main { padding: 28px 0 60px; }
+    section.legal-sec { padding: 22px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar-inner">
+    <span class="brand-mini">BYTE RACE 2026</span>
+    <a class="back-link" href="https://claude.ai/artifact/TVMyQpkifSDAB7Cniujzve">&larr; Back to event page</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 class="page-title">Terms, Privacy &amp; Copyright</h1>
+  <p class="page-sub">Byte Race 2026 &middot; Department of Computer Science &amp; Engineering, Vivekananda College of Engineering &amp; Technology, Puttur &middot; Last updated 28 September 2026</p>
+
+  <div class="notice">
+    <strong>Please read this in full before registering or taking part.</strong>
+    By registering for, submitting work to, or otherwise participating in Byte Race 2026 ("the Event"), you agree to everything below. If you do not agree, please do not register or participate. This page governs the Event and this website; where it conflicts with anything said verbally or in promotional material, this page controls.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#terms">Terms &amp; Conditions</a></li>
+      <li><a href="#eligibility">Eligibility &amp; registration</a></li>
+      <li><a href="#conduct">Conduct &amp; disqualification</a></li>
+      <li><a href="#ip">Your submissions &amp; intellectual property</a></li>
+      <li><a href="#prizes">Prizes</a></li>
+      <li><a href="#media">Photography, recording &amp; publicity</a></li>
+      <li><a href="#disclaimer">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of liability &amp; indemnity</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#copyright">Copyright &amp; trademarks</a></li>
+      <li><a href="#general">General</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="legal-sec" id="terms">
+    <h2 class="sec-h">1. Terms &amp; Conditions</h2>
+    <p>These Terms &amp; Conditions ("Terms") are between you (a "Participant") and the Department of Computer Science &amp; Engineering, Vivekananda College of Engineering &amp; Technology, Puttur, acting through Vivekananda Vidyavardhaka Sangha, Puttur® ("the Organisers", "we", "us", "our"). They apply to Byte Race 2026, a two-round hackathon comprising a quiz and project round ("Round 1") and a live build round ("Round 2"), and to this website.</p>
+    <p>The Organisers may amend these Terms, the Event's format, dates, venue, domains, judging process or prize structure at any time and for any reason, with or without notice. Continued participation after a change constitutes acceptance of the changed Terms. It is the Participant's responsibility to check this page for updates.</p>
+  </section>
+
+  <section class="legal-sec" id="eligibility">
+    <h2 class="sec-h">2. Eligibility &amp; registration</h2>
+    <ul>
+      <li>The Event is open to currently enrolled students of the college, across all branches and years, unless the Organisers state otherwise in official announcements.</li>
+      <li>Registration is only valid once confirmed by the Organisers through the official registration channel. Submitting a registration form does not guarantee a place in the Event or in Round 2.</li>
+      <li>The Organisers may verify eligibility at any stage and may reject, withdraw or cancel a registration at their sole discretion, including after selection, without being required to give a reason.</li>
+      <li>Team composition, team size and any changes to a team must be reported to and approved by the Organisers. The Organisers are not obliged to accommodate late changes.</li>
+      <li>Information given at registration (name, class/year, branch, contact details, GitHub link and similar) must be accurate. The Organisers may disqualify a Participant who provides false or misleading information.</li>
+    </ul>
+  </section>
+
+  <section class="legal-sec" id="conduct">
+    <h2 class="sec-h">3. Conduct &amp; disqualification</h2>
+    <p>Participants must follow the code of conduct of the college and of the Event, behave respectfully towards organisers, judges, mentors, volunteers and fellow participants, and comply with all instructions given by the Organisers during the Event.</p>
+    <p>The Organisers may disqualify a Participant or a team, at any stage and without refund of any fee or compensation of any kind, for reasons including but not limited to: plagiarism or use of someone else's work without permission; providing false information; abusive, disruptive, unsafe or dishonest conduct; breach of these Terms; or any conduct the Organisers reasonably consider harmful to the Event, the college, or other participants. The Organisers' decision on disqualification is final.</p>
+  </section>
+
+  <section class="legal-sec" id="ip">
+    <h2 class="sec-h">4. Your submissions &amp; intellectual property</h2>
+    <p><strong>Originality.</strong> Participants are solely responsible for ensuring that their project, code, designs and any other submitted material ("Submissions") are original to the team, or that the team holds all necessary rights, licences and permissions to use any third-party material (including open-source code, assets, AI-generated output or datasets) included in the Submission. The Organisers take no responsibility for verifying this and accept no liability for a Participant's infringement of a third party's rights.</p>
+    <p><strong>Ownership.</strong> As between a Participant and the Organisers, the Participant retains ownership of original intellectual property they create for their Submission, except as set out below.</p>
+    <p><strong>Licence to the Organisers.</strong> By submitting a Submission, each Participant grants the Organisers, the Department of Computer Science &amp; Engineering, and Vivekananda College of Engineering &amp; Technology a perpetual, irrevocable, worldwide, royalty-free, non-exclusive licence to use, reproduce, display, demonstrate, and publish the Submission and any description, screenshots, video or images of it, in whole or in part, for the purposes of judging, showcasing, reporting on, and promoting the Event, the Department and the college, in any medium including print, the college website and social media, without further consent from or payment to the Participant.</p>
+    <p><strong>AI tools.</strong> The Event permits the use of AI tools to build a Submission. Where AI-generated content is used, the Participant remains fully responsible for ensuring it does not infringe any third party's rights and for disclosing such use if asked by the judges.</p>
+  </section>
+
+  <section class="legal-sec" id="prizes">
+    <h2 class="sec-h">5. Prizes</h2>
+    <p>The advertised prize pool is &#8377;8,000 total (&#8377;5,000 for first place, &#8377;3,000 for second place) plus goodies for participants, as announced on the event page. Prize amounts, structure and the goodies offered are subject to change at the Organisers' discretion, including where sponsorship or budget changes, and any change will not entitle a Participant to compensation.</p>
+    <p>Selection into Round 2, judging criteria, scoring, and the choice of winners and runners-up are entirely at the discretion of the Organisers and the judging panel appointed by them. All such decisions are final and binding, and the Organisers are not obliged to disclose scoring details or judging rationale to any Participant.</p>
+    <p>The Organisers may withhold, delay, or revoke a prize where a Participant has breached these Terms, engaged in misconduct, or where the Organisers reasonably suspect the Submission is not the Participant's own original work.</p>
+    <p>Any tax, statutory deduction, or compliance obligation arising from receipt of a prize is the sole responsibility of the recipient.</p>
+  </section>
+
+  <section class="legal-sec" id="media">
+    <h2 class="sec-h">6. Photography, recording &amp; publicity</h2>
+    <p>By attending or participating in the Event, you consent to being photographed, filmed or recorded, and to the Organisers using your name, likeness, voice, and Submission in photographs, videos, reports and promotional material relating to the Event, the Department, and the college, across any medium (including print, the college website and social media), without compensation, in perpetuity, unless prohibited by law. If you do not wish to be photographed or filmed, you must inform the Organisers in writing before the Event begins; the Organisers will make reasonable efforts to accommodate such a request but cannot guarantee exclusion from group or venue-wide shots.</p>
+  </section>
+
+  <section class="legal-sec" id="disclaimer">
+    <h2 class="sec-h">7. Disclaimers</h2>
+    <p>The Event, this website and all related information are provided <strong>"as is" and "as available,"</strong> without warranties of any kind, whether express or implied, including but not limited to warranties of accuracy, completeness, fitness for a particular purpose, non-infringement, or that the Event will proceed as scheduled or at all.</p>
+    <p>Dates, timings, venue, format, domains, eligibility criteria, judging process and prize amounts described on the event page are <strong>tentative</strong> and may be changed, postponed or cancelled by the Organisers at any time, for any reason, including circumstances beyond their control (such as illness, weather, venue unavailability, insufficient registrations, or force majeure events), without liability to any Participant.</p>
+    <p>The Organisers do not guarantee any outcome from participation, including selection to Round 2, receipt of a prize, or any career, academic, or other benefit.</p>
+  </section>
+
+  <section class="legal-sec" id="liability">
+    <h2 class="sec-h">8. Limitation of liability &amp; indemnity</h2>
+    <p>To the fullest extent permitted by applicable law, the Organisers, the Department of Computer Science &amp; Engineering, Vivekananda College of Engineering &amp; Technology, and Vivekananda Vidyavardhaka Sangha, Puttur®, together with their respective staff, faculty, students, volunteers and representatives (together, the "College Parties"), <strong>shall not be liable</strong> for any direct, indirect, incidental, special, consequential, exemplary or punitive damages, or any loss of data, profits, opportunity, reputation, or goodwill, arising out of or in connection with:</p>
+    <ul>
+      <li>your registration for, participation in, or exclusion from the Event;</li>
+      <li>any injury, illness, loss of or damage to property, or death occurring during or in connection with the Event, however caused, except to the extent caused by the College Parties' gross negligence or wilful misconduct;</li>
+      <li>use of this website, any linked or third-party site, tool or platform (including registration forms, quiz platforms such as Kahoot, or GitHub) used in connection with the Event;</li>
+      <li>loss, corruption, theft or unauthorised access to a Participant's Submission, code, devices or data;</li>
+      <li>any dispute between members of the same team, or between teams;</li>
+      <li>any act or omission of a third party, including sponsors, vendors or other participants.</li>
+    </ul>
+    <p>Where liability cannot be excluded under applicable law, the College Parties' total aggregate liability to a Participant arising from the Event or this website is limited, to the maximum extent permitted by law, to a nominal sum of &#8377;100 (Indian Rupees one hundred).</p>
+    <p><strong>Indemnity.</strong> Each Participant agrees to indemnify, defend and hold harmless the College Parties from and against any and all claims, damages, losses, liabilities, costs and expenses (including reasonable legal fees) arising out of or relating to: the Participant's breach of these Terms; the Participant's Submission infringing a third party's intellectual property or other rights; or the Participant's negligent, reckless or wilful acts or omissions in connection with the Event.</p>
+    <p>Participants take part in the Event, including any travel to and from the venue, entirely at their own risk.</p>
+  </section>
+
+  <section class="legal-sec" id="privacy">
+    <h2 class="sec-h">9. Privacy Policy</h2>
+    <p><strong>This website.</strong> This event page itself is a static informational page. It sets no cookies and runs no analytics or advertising trackers. It loads web fonts from Google Fonts, which causes your browser to send standard technical information (such as your IP address and browser type) to Google under Google's own privacy policy; this is required for the fonts to display and is outside the Organisers' control.</p>
+    <p><strong>What we collect.</strong> When you register, take the quiz, submit a project, or otherwise interact with the Event through forms or channels the Organisers provide, the Organisers may collect personal information including but not limited to: name, college ID/USN, branch, year, email address, phone number, team details, photographs/video taken at the Event, quiz responses, and links to your project (e.g. GitHub links).</p>
+    <p><strong>How we use it.</strong> This information is collected and used, at the Organisers' discretion, to: administer registration and eligibility; run the quiz and project rounds; contact Participants about the Event; conduct judging; announce results; and promote the Event, the Department and the college (see Section 6). The Organisers determine, at their sole discretion, how long this information is retained and are not obliged to delete it on request except where required by applicable law.</p>
+    <p><strong>Sharing.</strong> Information may be shared with faculty, judges, volunteers and college administration involved in running the Event, and, where relevant to prize disbursal or reporting, with the college's administrative or finance offices. The Organisers do not sell personal information to third parties.</p>
+    <p><strong>Your rights.</strong> Where the Digital Personal Data Protection Act, 2023, or other applicable Indian law grants you a right to access, correct, or request deletion of your personal information, you may contact the Organisers using the details in Section 12; requests will be considered at the Organisers' discretion and in line with applicable law, and may be declined where retention is necessary for record-keeping, dispute resolution, or as permitted by law.</p>
+    <p><strong>Consent.</strong> By registering for or participating in the Event, you consent to the collection and use of your information as described in this Privacy Policy.</p>
+  </section>
+
+  <section class="legal-sec" id="copyright">
+    <h2 class="sec-h">10. Copyright &amp; trademarks</h2>
+    <p>&copy; 2026 Department of Computer Science &amp; Engineering, Vivekananda College of Engineering &amp; Technology, Puttur. All rights reserved.</p>
+    <p>The design, layout, text, graphics and underlying code of this website and the Byte Race 2026 event page are the property of the Organisers and may not be copied, reproduced, republished, distributed, or used to create a derivative work without the Organisers' prior written permission.</p>
+    <p>The names, logos and marks of Vivekananda College of Engineering &amp; Technology, Vivekananda Vidyavardhaka Sangha, Puttur®, and the Department of Computer Science &amp; Engineering belong to their respective owners and are used on this website only to identify the Organisers. Third-party names referenced (such as Kahoot and GitHub) are trademarks of their respective owners and are used for identification purposes only; no affiliation or endorsement by those parties is implied.</p>
+  </section>
+
+  <section class="legal-sec" id="general">
+    <h2 class="sec-h">11. General</h2>
+    <ul>
+      <li><strong>Entire understanding.</strong> These Terms, together with any official rules published separately for the Event, form the entire understanding between a Participant and the Organisers regarding the Event, and supersede any prior verbal or written representations.</li>
+      <li><strong>Severability.</strong> If any part of these Terms is found unenforceable, the remainder continues in full force.</li>
+      <li><strong>No waiver.</strong> A failure by the Organisers to enforce any part of these Terms is not a waiver of their right to do so later.</li>
+      <li><strong>Assignment.</strong> The Organisers may assign or transfer their rights and obligations under these Terms to the college or an affiliated body without a Participant's consent. A Participant may not assign their rights under these Terms.</li>
+      <li><strong>Governing law &amp; jurisdiction.</strong> These Terms are governed by the laws of India. Any dispute arising out of or in connection with the Event or this website shall be subject to the exclusive jurisdiction of the competent courts at Puttur / Dakshina Kannada, Karnataka.</li>
+    </ul>
+  </section>
+
+  <section class="legal-sec" id="contact">
+    <h2 class="sec-h">12. Contact</h2>
+    <p>For questions about these Terms, this Privacy Policy, registration, or the Event in general, please contact:</p>
+    <address class="contact-block">
+      <strong>Department of Computer Science &amp; Engineering</strong>
+      Vivekananda College of Engineering &amp; Technology<br>
+      Nehru Nagar, Puttur, Dakshina Kannada, Karnataka &ndash; 574203, India
+    </address>
+  </section>
+
+  <footer class="foot">
+    <span>&copy; 2026 Department of Computer Science &amp; Engineering, VCET Puttur. All rights reserved.</span>
+    <a href="https://claude.ai/artifact/TVMyQpkifSDAB7Cniujzve" style="color:inherit;font-weight:600;">&larr; Back to Byte Race 2026</a>
+  </footer>
+</main>
+
+</body>
+</html>
