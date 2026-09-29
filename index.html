@@ -151,8 +151,9 @@
 
   /* ============ REGISTRATION MARQUEE ============ */
   .registration-marquee { width: 100%; overflow: hidden; background: var(--accent-3); border-top: var(--hair); border-bottom: var(--hair); margin-bottom: 24px; white-space: nowrap; }
-  .registration-marquee-track { display: inline-flex; width: max-content; animation: registration-marquee-scroll 14s linear infinite; }
-  .registration-marquee span { display: inline-block; padding: 10px 32px; font-family: var(--font-display); font-weight: 700; font-size: clamp(.85rem, 2.5vw, 1rem); text-transform: uppercase; letter-spacing: .04em; }
+  .registration-marquee-track { display: flex; width: max-content; animation: registration-marquee-scroll 14s linear infinite; }
+  .registration-marquee-group { display: flex; gap: 32px; padding-right: 32px; flex-shrink: 0; }
+  .registration-marquee span { display: inline-block; padding: 10px 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(.85rem, 2.5vw, 1rem); text-transform: uppercase; letter-spacing: .04em; }
   @keyframes registration-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .registration-marquee-track { animation: none; } }
 
@@ -392,8 +393,16 @@
   <section class="hero" style="border-top:none; padding-top:56px;">
   <div class="registration-marquee" role="status" aria-label="Registration announcement">
     <div class="registration-marquee-track">
-      <span>Registration link coming soon • Registration link coming soon • Registration link coming soon • </span>
-      <span aria-hidden="true">Registration link coming soon • Registration link coming soon • Registration link coming soon • </span>
+      <div class="registration-marquee-group">
+        <span>Registration link coming soon</span>
+        <span>Registration link coming soon</span>
+        <span>Registration link coming soon</span>
+      </div>
+      <div class="registration-marquee-group" aria-hidden="true">
+        <span>Registration link coming soon</span>
+        <span>Registration link coming soon</span>
+        <span>Registration link coming soon</span>
+      </div>
     </div>
   </div>
 
