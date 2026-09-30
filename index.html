@@ -169,7 +169,7 @@
     border: var(--hair); border-radius: var(--radius); background: var(--surface);
     white-space: nowrap;
   }
-  .pill.registration-pill { background: red; color: white; }
+  .pill.registration-pill { background: red; color: white; text-decoration: none; }
   h1.hero-title {
     font-family: var(--font-display); font-weight: 700;
     font-size: var(--hero-fs, clamp(2rem, 8vw, 4.6rem));
@@ -397,14 +397,14 @@
   <div class="registration-marquee" role="status" aria-label="Registration announcement">
     <div class="registration-marquee-track">
       <div class="registration-marquee-group">
-        <span>Registration link coming soon</span>
-        <span>Registration link coming soon</span>
-        <span>Registration link coming soon</span>
+        <span>Registration open 1–4 October 2026</span>
+        <span>Registration open 1–4 October 2026</span>
+        <span>Registration open 1–4 October 2026</span>
       </div>
       <div class="registration-marquee-group" aria-hidden="true">
-        <span>Registration link coming soon</span>
-        <span>Registration link coming soon</span>
-        <span>Registration link coming soon</span>
+        <span>Registration open 1–4 October 2026</span>
+        <span>Registration open 1–4 October 2026</span>
+        <span>Registration open 1–4 October 2026</span>
       </div>
     </div>
   </div>
@@ -412,7 +412,7 @@
     <div class="eyebrow-row">
       <span class="pill">All branches · All years</span>
       <span class="pill">Round 1 + Round 2</span>
-      <span class="pill registration-pill">Register For Free</span> 
+      <a class="pill registration-pill" href="register.html">Register For Free</a>
     </div>
     <div class="hero-top">
       <h1 class="hero-title">Build something<br><span class="line2">in 6 hours flat.</span></h1>
@@ -421,6 +421,8 @@
     <p class="hero-desc">Two rounds, one weekday. Clear a 50-mark quiz and a project submission round, then go head-to-head in a 6-hour live build across 5–6 open domains.</p>
     <div class="hero-cta">
       <a class="btn-rulebook" href="rulebook.html">View the Rule Book <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn-rulebook" href="https://forms.gle/JfVpqTEKTiJPhzw86">Register your team <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn-rulebook" href="https://docs.google.com/presentation/d/1vM4yXFJ_MqudgeIHWVeF-sSRe2R4Zu26/export/pptx" target="_blank" rel="noopener">Download PPT <span class="arrow" aria-hidden="true">&darr;</span></a>
     </div>
 
     <div class="countdown" id="countdown">
@@ -539,12 +541,11 @@
     <span>&copy; 2026 Department of Computer Science &amp; Engineering, VCET Puttur. All rights reserved.</span>
     <span>Developed and built by <strong>Abhinav N G</strong> of <strong>CoRE Club (Center of Research and Excellence)</strong>.</span>
     <nav class="foot-links" aria-label="Legal">
-      <a href="https://drive.google.com/uc?export=download&id=1pqapiTBTEOkX_R87GkjJC-rFLu8XbDca">Rule Book</a>
+      <a href="https://drive.google.com/uc?export=download&id=1H5lWdOk10Fmh0woSJHeHO5CXU8P_woVN">Rule Book</a>
       <a href="terms-conditions.html">Terms &amp; Privacy</a>
     </nav>
   </footer>
 </main>
-
 <script>
 (function () {
   // ---- Countdown ----
