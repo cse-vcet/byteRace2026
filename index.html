@@ -289,18 +289,23 @@
   @media (max-width: 560px) { .stud-grid { grid-template-columns: 1fr; } }
 
   /* ============ RULE BOOK BUTTON ============ */
-  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 clamp(24px, 5vw, 36px); }
+  .hero-cta { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin: 0 0 clamp(24px, 5vw, 36px); }
   .btn-rulebook {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     font-family: var(--font-display); font-weight: 700; font-size: clamp(.92rem, 2.6vw, 1.05rem);
     color: var(--text); background: var(--accent); text-decoration: none;
     border: var(--hair); box-shadow: 5px 5px 0 var(--border);
-    padding: 13px 20px; transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    width: 270px; height: 52px; padding: 13px 20px;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
   }
   .btn-rulebook:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--border); background: var(--accent-3); }
   .btn-rulebook:active { transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--border); }
   .btn-rulebook .arrow { font-size: 1.15em; line-height: 1; }
-  @media (max-width: 480px) { .btn-rulebook { width: 100%; justify-content: center; } }
+  .template-cta { display: flex; width: 270px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .template-note { margin: 0; font-size: .78rem; font-weight: 600; color: var(--text-dim); }
+  @media (max-width: 480px) {
+    .btn-rulebook, .template-cta { width: 100%; }
+  }
 
   /* ============ ACCESSIBILITY ============ */
   .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--text); color: var(--bg); padding: 10px 14px; font-weight: 700; font-size: .85rem; text-decoration: none; }
@@ -423,7 +428,10 @@
     <div class="hero-cta">
       <a class="btn-rulebook" href="rulebook.html">View the Rule Book <span class="arrow" aria-hidden="true">&rarr;</span></a>
       <a class="btn-rulebook" href="https://forms.gle/JfVpqTEKTiJPhzw86">Register your team <span class="arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="btn-rulebook" href="https://docs.google.com/presentation/d/1vM4yXFJ_MqudgeIHWVeF-sSRe2R4Zu26/export/pptx" target="_blank" rel="noopener">Download PPT Template<span class="arrow" aria-hidden="true">&darr;</span></a>
+      <div class="template-cta">
+        <a class="btn-rulebook" href="https://docs.google.com/presentation/d/1vM4yXFJ_MqudgeIHWVeF-sSRe2R4Zu26/export/pptx" target="_blank" rel="noopener">Download PPT Template<span class="arrow" aria-hidden="true">&darr;</span></a>
+        <p class="template-note">* PPT submissions must use this template only.</p>
+      </div>
     </div>
 
     <div class="countdown" id="countdown">
