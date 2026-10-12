@@ -32,8 +32,14 @@ h1{font:700 clamp(45px,8vw,88px)/.94 var(--display);letter-spacing:-.075em;margi
 h2{font:700 clamp(27px,4vw,40px)/1 var(--display);letter-spacing:-.055em;margin:0}
 .count{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.team-card{border:3px solid var(--ink);background:var(--white);box-shadow:var(--shadow);padding:22px;min-width:0;position:relative}
-.team-card:nth-child(1){background:var(--yellow)}
+.team-card {
+  border: 3px solid var(--ink);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  min-width: 0;
+  position: relative;
+}
 .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:20px}
 .rank{font:700 48px/.9 var(--display);letter-spacing:-.08em}
 .selected{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--ink);padding:6px 8px;background:#fff}
