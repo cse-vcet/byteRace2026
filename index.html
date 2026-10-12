@@ -346,6 +346,31 @@
     .btn-rulebook, .template-cta { width: 100%; }
   }
 
+  /* ============ SELECTED TEAMS CTA ============ */
+  .selected-teams-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; width: 100%; min-height: 104px;
+    margin: 0 0 clamp(28px, 5vw, 42px);
+    padding: clamp(20px, 4vw, 30px);
+    border: 3px solid var(--border); background: var(--accent-3);
+    color: var(--text); text-decoration: none;
+    box-shadow: 8px 8px 0 var(--border);
+    font-family: var(--font-display);
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .selected-teams-cta .cta-copy { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .selected-teams-cta .cta-kicker { font: 800 .72rem var(--font-body); letter-spacing: .12em; text-transform: uppercase; }
+  .selected-teams-cta .cta-title { font-size: clamp(1.35rem, 4.5vw, 2.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.04em; }
+  .selected-teams-cta .cta-subtitle { font: 500 clamp(.8rem, 2vw, .95rem)/1.4 var(--font-body); color: var(--text-dim); }
+  .selected-teams-cta .cta-arrow { flex: 0 0 auto; display: grid; place-items: center; width: clamp(48px, 8vw, 72px); height: clamp(48px, 8vw, 72px); border: 3px solid var(--border); background: var(--accent); font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; }
+  .selected-teams-cta:hover { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--border); background: var(--surface); }
+  .selected-teams-cta:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--border); }
+  .selected-teams-cta:focus-visible { outline: 4px solid var(--accent-2); outline-offset: 5px; }
+  @media (max-width: 480px) {
+    .selected-teams-cta { align-items: flex-start; padding: 18px; gap: 12px; }
+    .selected-teams-cta .cta-arrow { width: 44px; height: 44px; }
+  }
+
   /* ============ ACCESSIBILITY ============ */
   .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--text); color: var(--bg); padding: 10px 14px; font-weight: 700; font-size: .85rem; text-decoration: none; }
   .skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
@@ -468,6 +493,15 @@
         <p class="template-note">* PPT submissions must use this template only.</p>
       </div>
     </div>
+
+    <a class="selected-teams-cta" href="selected-teams.html" aria-label="View the 10 selected teams">
+      <span class="cta-copy">
+        <span class="cta-kicker">Shortlist announced · 12 October 2026</span>
+        <span class="cta-title">THE 10 SELECTED TEAMS</span>
+        <span class="cta-subtitle">See the shortlisted teams, leaders, and members.</span>
+      </span>
+      <span class="cta-arrow" aria-hidden="true">↗</span>
+    </a>
 
     <div class="countdown" id="countdown">
       <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">DAYS</div></div>
